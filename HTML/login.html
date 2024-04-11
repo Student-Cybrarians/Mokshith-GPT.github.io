@@ -23,11 +23,8 @@
             <input type="email" placeholder="Enter your Email Address:" id="email"><br />
             <p>OR</p>
             <input type="tel" placeholder="Mobile No:" id="accno"><br />
-            <input 
-                type="password" 
-                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
-                required placeholder="Enter your Password:" id="password" onblur="return validForm();">
-            <br/>
+            <input type="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required  placeholder="Password:" onblur="return validPassword();"><br />
+            
             <p id="result"></p>
             <button 
                 type="submit" 
