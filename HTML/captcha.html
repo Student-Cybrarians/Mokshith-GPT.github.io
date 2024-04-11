@@ -1,39 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet"
-	href="CSS/captcha.css">
-	<link rel="stylesheet" href=
-"https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-		integrity=
-"sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
-		crossorigin="anonymous">
-	<script src="Java Script/captcha.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body onload="generate()">
-	<div id="user-input" class="inline">
-		<input type="text"
-			id="submit"
-			placeholder="Captcha code" />
-	</div>
+<body>
+    <div class="center">
+        <h1 id="captchaHeading">
+            Captcha Validator Using HTML, CSS and JavaScript
+        </h1>
 
-	<div class="inline" onclick="generate()">
-		<i class="fas fa-sync"></i>
-	</div>
+        <div id="captchaBackground">
+            <canvas id="captcha">captcha text</canvas>
+            <input id="textBox" type="text" name="text">
 
-	<div id="image"
-		class="inline"
-		selectable="False">
-	</div>
-	<input type="submit"
-		id="btn"
-		onclick="printmsg()" />
+            <div id="buttons">
+                <input id="submitButton" type="submit">
+                <button id="refreshButton" type="submit">Refresh</button>
+            </div>
 
-	<p id="key"></p>
+            <span id="output"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
