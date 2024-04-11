@@ -1,30 +1,70 @@
-<!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
-</head>
-
-<body>
-    <div class="center">
-        <h1 id="captchaHeading">
-            Captcha Validator Using HTML, CSS and JavaScript
-        </h1>
-
-        <div id="captchaBackground">
-            <canvas id="captcha">captcha text</canvas>
-            <input id="textBox" type="text" name="text">
-
-            <div id="buttons">
-                <input id="submitButton" type="submit">
-                <button id="refreshButton" type="submit">Refresh</button>
-            </div>
-
-            <span id="output"></span>
-        </div>
-    </div>
-
-    <script src="Java Script/script.js"></script>
-</body>
-
+   <head>
+      <script type="text/javascript">
+         function generateCaptcha()
+         {
+             var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+             var i;
+             for (i=0;i<4;i++){
+               var a = alpha[Math.floor(Math.random() * alpha.length)];
+               var b = alpha[Math.floor(Math.random() * alpha.length)];
+               var c = alpha[Math.floor(Math.random() * alpha.length)];
+               var d = alpha[Math.floor(Math.random() * alpha.length)];
+              }
+            var code = a + '' + b + '' + '' + c + '' + d;
+            document.getElementById("mainCaptcha").value = code
+          }
+          function CheckValidCaptcha(){
+              var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
+              var string2 = removeSpaces(document.getElementById('txtInput').value);
+              if (string1 == string2){
+         document.getElementById('success').innerHTML = "Form is validated Successfully";
+         //alert("Form is validated Successfully");
+                return true;
+              }
+              else{       
+         document.getElementById('error').innerHTML = "Please enter a valid captcha."; 
+         //alert("Please enter a valid captcha.");
+                return false;
+         
+              }
+          }
+          function removeSpaces(string){
+            return string.split(' ').join('');
+          }
+      </script>    
+   </head>
+   <body onload="generateCaptcha();">
+      <center>
+         <h1>Please please fill the following fields to validate.</h1>
+         <table>
+            <tr>
+               <td>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="text" id="mainCaptcha"readonly="readonly"/> //set background image according to your choice.
+                  <input type="button" id="refresh" value="Refresh" onclick="generateCaptcha();" />
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input type="text" id="txtInput"/>    
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <input id="Button1" type="button" value="Check" onclick="CheckValidCaptcha();"/>
+               </td>
+            </tr>
+            <tr>
+               <td><span id="error" style="color:red"></span></td>
+            </tr>
+            <tr>
+               <td><span id="success" style="color:green"></span></td>
+            </tr>
+         </table>
+      </center>
+   </body>
 </html>
