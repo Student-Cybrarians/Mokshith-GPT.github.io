@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';">
     <title>Login | Online Banking Website</title>
     <link href="../CSS/loginCSS.css" rel="stylesheet">
-     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="../Java Script/loginJS.js"></script>
     
 </head>
@@ -18,7 +18,7 @@
                 title="Online Banking Website"></a>
     </div>
 
-    <form method="POST">
+    <form action="?" method="POST">
         <fieldset>
             <legend>Login</legend>
 
@@ -28,11 +28,11 @@
             <input type="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required  placeholder="Password:" onblur="return validPassword();"><br />
             <input type="password" id="confirmPassword" placeholder="Confirm Password:" onblur="return cnfrmPass();">
 
-<form action="?" method="POST">
+
       <div class="g-recaptcha" data-sitekey="your_site_key"></div>
       <br/>
       <input type="submit" value="Submit">
-    </form>
+
             <p id="result"></p>
             <button 
                 type="submit" 
