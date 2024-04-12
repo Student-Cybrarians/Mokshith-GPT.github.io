@@ -27,8 +27,11 @@
             <input type="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required  placeholder="Password:" onblur="return validPassword();"><br />
             <input type="password" id="confirmPassword" placeholder="Confirm Password:" onblur="return cnfrmPass();">
 
-<div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
-
+<form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
             <p id="result"></p>
             <button 
                 type="submit" 
