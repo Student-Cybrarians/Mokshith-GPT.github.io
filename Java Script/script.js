@@ -1,53 +1,29 @@
-let captchaText = document.getElementById('captcha');
-var ctx = captchaText.getContext("2d");
-ctx.font = "30px Roboto";
-ctx.fillStyle = "#08e5ff";
 
-let userText = document.getElementById('textBox');
-let submitButton = document.getElementById('submitButton');
-let output = document.getElementById('output');
-let refreshButton = document.getElementById('refreshButton');
-var captchaStr = "";
+        function generateCaptcha() {
+            var alpha = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+            var i;
+            for (i = 0; i < 4; i++) {
+                var a = alpha[Math.floor(Math.random() * alpha.length)];
+                var b = alpha[Math.floor(Math.random() * alpha.length)];
+                var c = alpha[Math.floor(Math.random() * alpha.length)];
+                var d = alpha[Math.floor(Math.random() * alpha.length)];
+            }
+            var code = a + '' + b + '' + '' + c + '' + d;
+            document.getElementById("mainCaptcha").value = code
+        }
+        function CheckValidCaptcha() {
+            var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
+            var string2 = removeSpaces(document.getElementById('txtInput').value);
+            if (string1 == string2) {
+                document.getElementById('success').innerHTML = "Form is validated Successfully";
+                return true;
+            }
+            else {
+                document.getElementById('error').innerHTML = "Please enter a valid captcha.";
+                return false;
 
-let alphaNums = ['A', 'B', 'C', 'D', 'E', 'F', 'G',
-                 'H', 'I', 'J', 'K', 'L', 'M', 'N', 
-                 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
-                 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 
-                 'c', 'd', 'e', 'f', 'g', 'h', 'i', 
-                 'j', 'k', 'l', 'm', 'n', 'o', 'p', 
-                 'q', 'r', 's', 't', 'u', 'v', 'w', 
-                 'x', 'y', 'z', '0', '1', '2', '3', 
-                 '4', '5', '6', '7', '8', '9'];
-function generate_captcha() {
-   let emptyArr = [];
-
-   for (let i = 1; i <= 7; i++) {
-       emptyArr.push(alphaNums[Math.floor(Math.random() * alphaNums.length)]);
-   }
-
-   captchaStr = emptyArr.join('');
-
-   ctx.clearRect(0, 0, captchaText.width, captchaText.height);
-   ctx.fillText(captchaStr, captchaText.width/4, captchaText.height/2);
-
-   output.innerHTML = "";
-}
-
-generate_captcha();
-function check_captcha() {
-    if (userText.value === captchaStr) {
-        output.className = "correctCaptcha";
-        output.innerHTML = "Correct!";
-    } else {
-        output.className = "incorrectCaptcha";
-        output.innerHTML = "Incorrect, please try again!";
-    }
-}
-userText.addEventListener('keyup', function(e) {
-    if (e.key === 'Enter') {
-       check_captcha();
-    }
-});
-
-submitButton.addEventListener('click', check_captcha);
-refreshButton.addEventListener('click', generate_captcha);
+            }
+        }
+        function removeSpaces(string) {
+            return string.split(' ').join('');
+        }
