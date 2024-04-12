@@ -14,7 +14,6 @@ function wrong () {
 function validForm () {
     var email = document.getElementById( "email" ).value;
     var accno = document.getElementById( "accno" ).value;
-    var pass = document.getElementById( "password" ).value;
     if ( email.length == 0 )
     {
         if ( /[0-9]/.test( accno ) == true && ( accno.length != 16 ) )
@@ -23,32 +22,32 @@ function validForm () {
             wrong();
             return false;
         }
-        else
-        {
-            if ( pass.length < 6 )
-            {
-                document.getElementById( "result" ).innerHTML = "Password must contain more than 6 charcaters.";
-                wrong();
-                return false;
-            }
-            else if ( pass.length >= 6 )
-            {
-                document.getElementById( "loginbtn" ).disabled = false;
-                document.getElementById( "result" ).innerHTML = "";
-                document.getElementById( "loginbtn" ).style.opacity = "1";
-                return true;
-            }
-        }
-    }
-    else
+function validPassword () {
+    var pass = document.getElementById( "password" ).value;
+    if ( pass.length < 6 )
     {
-        if ( pass.length < 6 )
+        wrong();
+        document.getElementById( "result" ).innerHTML = "Password should contain atleast 6 characters.";
+        document.getElementById( "password" ).focus();
+        document.getElementById( "password" ).style.border = "2px solid red";
+        return false;
+    }
+    else if ( pass.length >= 6 )
+    {
+        if ( /(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/.test( pass ) == false )
         {
-            document.getElementById( "result" ).innerHTML = "Password must contain more than 6 charcaters.";
             wrong();
+            document.getElementById( "result" ).innerHTML = "Password should contain Uppercase, lowercase, and numeric charcaters. ";
             return false;
         }
-        else if ( pass.length >= 6 )
+        else
+        {
+            right();
+            document.getElementById( "password" ).style.border = "none";
+            return true;
+        }
+    }
+}
         {
             document.getElementById( "loginbtn" ).disabled = false;
             document.getElementById( "result" ).innerHTML = "";
