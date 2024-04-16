@@ -1,26 +1,65 @@
-// Function to enable/disable the submit button based on reCAPTCHA completion
-function enableSubmitButton(response) {
-  if (response && response !== "") {
-    document.getElementById("submitButton").removeAttribute("disabled");
-  } else {
-    document.getElementById("submitButton").setAttribute("disabled", "disabled");
-  }
+function load () {
+    wrong();
+    document.getElementById( "accno" ).value = "";
+    document.getElementById( "email" ).value = "";
 }
-
-// Callback function executed when reCAPTCHA is solved
-function recaptchaCallback(response) {
-  enableSubmitButton(response);
+function retEmail () {
+    return document.getElementById( "email" ).value;
 }
-
-// Add event listener to reCAPTCHA checkbox
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("myForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission
-    // Check if reCAPTCHA has been solved before allowing form submission
-    if (grecaptcha.getResponse() === "") {
-      alert("Please complete the reCAPTCHA challenge.");
-    } else {
-      this.submit(); // Submit the form
+function wrong () {
+    document.getElementById( "loginbtn" ).disabled = true;
+    document.getElementById( "accno" ).focus();
+    document.getElementById( "loginbtn" ).style.opacity = "0.5";
+}
+function validForm () {
+    var email = document.getElementById( "email" ).value;
+    var accno = document.getElementById( "accno" ).value;
+    var pass = document.getElementById( "password" ).value;
+    if ( email.length == 0 )
+    {
+        if ( /[0-9]/.test( accno ) == true && ( accno.length != 16 ) )
+        {
+            document.getElementById( "result" ).innerHTML = "Account No. must be of 16 numeric characters.";
+            wrong();
+            return false;
+        }
+        else
+        {
+            if ( pass.length < 6 )
+            {
+                document.getElementById( "result" ).innerHTML = "Password must contain more than 6 charcaters.";
+                wrong();
+                return false;
+            }
+            else if ( pass.length >= 6 )
+            {
+                document.getElementById( "loginbtn" ).disabled = false;
+                document.getElementById( "result" ).innerHTML = "";
+                document.getElementById( "loginbtn" ).style.opacity = "1";
+                return true;
+            }
+        }
     }
-  });
-});
+    else
+    {
+        if ( pass.length < 6 )
+        {
+            document.getElementById( "result" ).innerHTML = "Password must contain more than 6 charcaters.";
+            wrong();
+            return false;
+        }
+        else if ( pass.length >= 6 )
+        {
+            document.getElementById( "loginbtn" ).disabled = false;
+            document.getElementById( "result" ).innerHTML = "";
+            document.getElementById( "loginbtn" ).style.opacity = "1";
+            return true;
+        }
+    }
+}
+
+function goto () {
+    document.getElementById( "loginbtn" ).style.borderStyle = "inset";
+    window.location.replace( "home.html" );
+    return true;
+}
