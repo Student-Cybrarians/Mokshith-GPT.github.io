@@ -1,10 +1,9 @@
-
-
-
 // Function to load the script
 function load() {
-    // Add event listeners for form submission and reset
-    document.querySelector('form').addEventListener('submit', validateForm);
+    // Add event listener for form submission
+    document.getElementById('loginForm').addEventListener('submit', validateForm);
+
+    // Add event listener for reset button
     document.getElementById('resetbtn').addEventListener('click', resetForm);
 }
 
@@ -42,11 +41,23 @@ function validateForm(event) {
         return false;
     }
 
+    // Check if reCAPTCHA is solved
+    if (!grecaptcha.getResponse()) {
+        alert('Please complete the reCAPTCHA challenge.');
+        return false;
+    }
+
     // If all validations pass, submit the form
     this.submit();
 }
 
 // Function to reset the form
 function resetForm() {
-    document.querySelector('form').reset();
+    document.getElementById('loginForm').reset();
+}
+
+// Function to handle reCAPTCHA callback
+function recaptchaCallback() {
+    var submitButton = document.getElementById('submitButton');
+    submitButton.removeAttribute('disabled');
 }
