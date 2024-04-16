@@ -1,24 +1,26 @@
-import captcha from './captcha.js';
+// Function to enable/disable the submit button based on reCAPTCHA completion
+function enableSubmitButton(response) {
+  if (response && response !== "") {
+    document.getElementById("submitButton").removeAttribute("disabled");
+  } else {
+    document.getElementById("submitButton").setAttribute("disabled", "disabled");
+  }
+}
 
-// Generate captcha code
-const captchaCode = captcha.generate();
+// Callback function executed when reCAPTCHA is solved
+function recaptchaCallback(response) {
+  enableSubmitButton(response);
+}
 
-// Render captcha in login.html
-document.getElementById('captcha').innerHTML = `
-  <img src="${captchaCode.dataUri}" alt="Captcha" />
-  <input type="text" id="captchaInput" />
-`;
-
-// Verify captcha code on submit
-const form = document.getElementById('loginForm');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const input = document.getElementById('captchaInput').value;
-    if (input !== captchaCode.text) {
-        alert('Incorrect captcha');
-        return;
+// Add event listener to reCAPTCHA checkbox
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("myForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+    // Check if reCAPTCHA has been solved before allowing form submission
+    if (grecaptcha.getResponse() === "") {
+      alert("Please complete the reCAPTCHA challenge.");
+    } else {
+      this.submit(); // Submit the form
     }
-
-    form.submit();
+  });
 });
