@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';">
     <title>Login | Online Banking Website</title>
     <link href="..//loginCSS.css" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="../Java Script/loginJS.js"></script>
     
 </head>
@@ -33,7 +33,7 @@
      
             <button 
                 type="submit" 
-                onclick="location.href='HTML/captcha.html'">Login</button>
+                onclick="location.href='<div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>'">Login</button>
             <button type="reset" id="resetbtn">Reset</button>
         </fieldset>
     </form>
