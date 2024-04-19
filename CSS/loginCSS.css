@@ -44,6 +44,18 @@ button{
     font-size: 20px;
     font-weight: bolder;
 }
+input[type="checkbox"]{
+    height:20px;
+    width:20px;
+}
+span{
+    
+}
+input[type="checkbox"]:checked{
+    width:20px;
+    transition: width 0.5s;
+}
+
 #result{
     font-size:10px;
     color:red;
