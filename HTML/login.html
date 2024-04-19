@@ -8,6 +8,7 @@
     <link href="../CSS/loginCSS.css" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="../Java Script/loginJS.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body onload="load();">
@@ -27,6 +28,8 @@
                 <input type="password" id="confirmPassword" placeholder="Confirm Password:"
                     onblur="return cnfrmPass();">
             <p id="result"></p>
+
+            
             <div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
             <button type="submit" id="submitButton"S>Login</button>
             <button type="reset" id="resetbtn">Reset</button>
