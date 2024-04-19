@@ -1,12 +1,15 @@
 @import url("../CSS/homeCSS.css");
 fieldset{
     border-radius:25px;
-    padding:30px;
+    padding:20px;
     background:linear-gradient(90deg, lightblue, purple);
     text-align: center;
     width:750px;
     box-shadow:5px 10px 2px 5px;
-    margin:50px auto;
+    margin:10px auto;
+}
+form{
+    height:800px;
 }
 legend{
     text-transform: uppercase;
@@ -19,31 +22,31 @@ legend{
     padding:10px
 }
 input{
-    height:50px;
+    height:30px;
     border-radius:20px;
-    padding:30px;
-    font-size:30px;
+    padding:25px;
+    font-size:25px;
     font-weight:bolder;
     margin:10px;
-    width: 70%;
+    width:70%;
 }
 input:focus{
     border:2px solid blue;
-}
-form p{
-    font-size:30px;
-    margin:0px;
-    text-decoration: underline;
 }
 button{
     height:50px;
     padding:10px;
     border-radius:20px;
-    border-style: outset;
+    border-style:outset;
     margin:5px 30px;
     font-size: 20px;
     font-weight: bolder;
 }
+/* span{
+    position: relative;
+    bottom:20px;
+    margin:0px;
+} */
 input[type="checkbox"]{
     height:20px;
     width:20px;
@@ -56,17 +59,18 @@ input[type="checkbox"]:checked{
     transition: width 0.5s;
 }
 
-#result{
-    font-size:10px;
-    color:red;
-    font-style:oblique;
-}
-
-#accno:invalid{
-    border:2px solid red;
-}
 input[type="email"]:invalid{
     border:2px solid red;
 }
-
-
+input[type="number"]:invalid{
+    border:2px solid red;
+}
+#result{
+    width:100%;
+    color:red;
+    text-decoration: underline;
+}
+span{
+    display: inline-block;
+    margin-top:10px;
+}
