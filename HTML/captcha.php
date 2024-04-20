@@ -15,7 +15,7 @@
     <body onload="load();">
         <div id="header">
             <h1>Online Banking Website</h1>
-            <a href="home.html"><img src="..//Images//logo.jpg" alt="Online Banking Website" title="Online Banking Website"></a>
+            <a href="home.php"><img src="..//Images//logo.jpg" alt="Online Banking Website" title="Online Banking Website"></a>
         </div>
         <form  method="POST">
             <fieldset>
