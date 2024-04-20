@@ -13,7 +13,7 @@
 <body onload="load();">
     <div id="header">
         <h1>Online Banking Website</h1>
-        <a href="home.html"><img src="../Images/logo.jpg" alt="Online Banking Website" title="Online Banking Website"></a>
+        <a href="home.php"><img src="../Images/logo.jpg" alt="Online Banking Website" title="Online Banking Website"></a>
     </div>
 
     <form method="POST" id="loginForm">
@@ -31,10 +31,6 @@
             <p><input type="checkbox" name="tnc" id="tnc" required onchange="return validForm();"><span>I agree to the <a
                             href="#">Term and Conditions</a></span></p>
 
-            <img src="https://www.captchaexample.com/images/SampleCaptcha.png" alt="Captcha image"><br>
-            <input type="text" name="captcha" placeholder="Enter captcha" required><br>
-
-            <script src="https://www.captchaexample.com/scripts/captcha.js"></script>
 
 
             
