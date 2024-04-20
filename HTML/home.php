@@ -14,7 +14,7 @@
     <body>
         <div id="header" class="head">
             <h1>Online Banking Website</h1>
-            <a href="home.php"><img src="../Images/logo.jpg" alt="Online Banking System"
+            <a href="index.html"><img src="../Images/logo.jpg" alt="Online Banking System"
                     title="Online Banking Website"></a>
         </div>
         <div id="log_sign">
