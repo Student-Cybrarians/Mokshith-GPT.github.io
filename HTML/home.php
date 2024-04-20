@@ -18,36 +18,36 @@
                     title="Online Banking Website"></a>
         </div>
         <div id="log_sign">
-            <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
         </div>
         <div id="navbar">
             <div id="nav">
                 <div id="services">
                     <li><a href="#">- Services -</a></li>
                     <nav class="content">
-                        <li><a href="perIntBank.html">- Personal Internet Banking -</a></li>
-                        <li><a href="corpBank.html">- Corprorate Banking -</a></li>
-                        <li><a href="merBusiness.html">- Merchant Bussiness -</a></li>
-                        <li><a href="onlTax.html">- Online Tax -</a></li>
+                        <li><a href="perIntBank.php">- Personal Internet Banking -</a></li>
+                        <li><a href="corpBank.php">- Corprorate Banking -</a></li>
+                        <li><a href="merBusiness.php">- Merchant Bussiness -</a></li>
+                        <li><a href="onlTax.php">- Online Tax -</a></li>
                     </nav>
                 </div>
                 <div id="payment_transfer">
                     <li><a href="#">- Payment Transfer -</a></li>
                     <nav class="content">
-                        <li><a href="intTransfer.html">- International Transfer -</a></li>
-                        <li><a href="natTransfer.html">- National Transfer -</a></li>
-                        <li><a href="billPay.html">- Bill Payment -</a></li>
+                        <li><a href="intTransfer.php">- International Transfer -</a></li>
+                        <li><a href="natTransfer.php">- National Transfer -</a></li>
+                        <li><a href="billPay.php">- Bill Payment -</a></li>
                     </nav>
                 </div>
                 <div id="fixed_deposite">
-                    <li><a href="fixDep.html">- Fixed Deposit -</a></li>
+                    <li><a href="fixDep.php">- Fixed Deposit -</a></li>
                 </div>
                 <div id="e_service">
-                    <li><a href="eServ.html">- E.Services -</a></li>
+                    <li><a href="eServ.php">- E.Services -</a></li>
                 </div>
                 <div id="acc">
-                    <li><a href="acc.html">- My Account -</a></li>
+                    <li><a href="acc.php">- My Account -</a></li>
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
             </div>
         </div>
         <div id="foot">
-            <a href="aboutUs.html">About Us</a>
+            <a href="aboutUs.php">About Us</a>
         </div>
     </body>
 <footer style="text-align: center; position: absolute; bottom: 0; width: 100%;">
