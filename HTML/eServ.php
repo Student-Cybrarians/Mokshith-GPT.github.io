@@ -12,7 +12,7 @@
     <body>
         <div id="header">
             <h1>Online Banking Website</h1>
-            <a href="home.html"><img src="../Images/logo.jpg" alt="Online Banking System"
+            <a href="home.php"><img src="../Images/logo.jpg" alt="Online Banking System"
                     title="Online Banking Website"></a>
         </div>
         <div>
