@@ -9,10 +9,11 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "FirstMySQLConnection",
-            "database": "register",
-            "username": "mokshith-gpt",
+            "name": "local_db",
+            "username": "root",
+            "database": "mokshith-gpt",
             "password": ""
         }
-    ]
+    ],
+    "files.autoSave": "afterDelay"
 }
