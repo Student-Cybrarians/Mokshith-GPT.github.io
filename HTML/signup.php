@@ -1,7 +1,7 @@
 <?php
 
 // Connect to the database
-$host = 'localhost';
+$host = '127.0.0.1';
 $username = 'mokshith-gpt';
 $password = '';
 $dbname = 'mokshith-gpt';
