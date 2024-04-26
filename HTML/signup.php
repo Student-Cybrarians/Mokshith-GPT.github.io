@@ -1,7 +1,7 @@
 <?php
 
 // Connect to AWS RDS database  
-$host = "online-banking-website.c7u0ukksaqv1.us-east-2.rds.amazonaws.com";
+$host = "online.cluster-c7u0ukksaqv1.us-east-2.rds.amazonaws.com";
 $username = "admin";
 $password = "admin123";
 $dbname = "online";
