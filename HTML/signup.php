@@ -2,9 +2,9 @@
 
 // Connect to AWS RDS database  
 $host = "online-banking-website.c7u0ukksaqv1.us-east-2.rds.amazonaws.com";
-$username = "MokshithGPT1976";
-$password = "MokshithGPT";
-$dbname = "online-banking-website";
+$username = "admin";
+$password = "admin123";
+$dbname = "online";
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
