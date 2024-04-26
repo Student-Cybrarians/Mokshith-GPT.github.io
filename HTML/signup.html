@@ -29,7 +29,8 @@
               
           <input type="email" id="email" placeholder="Enter your Email Address:"><br>
 
-          <div id="phoneNumber" contenteditable="true" onkeypress="return isNumeric(event)">Enter phone number</div>
+          <input type="tel" id="phoneNumber" placeholder="Enter phone number">
+
 
           
           <input type="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required  
@@ -47,7 +48,7 @@
           
           <div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
 
-          <button type="button" id="signupbtn" value="0" onclick="goto();">Sign Up</button>
+          <button type="submit" id="signupbtn" value="0" onclick="if(signupSuccessful()) { window.location.href='login.html'; }">Sign Up</button>
           
           <button type="reset" id="resetbtn">Reset</button>
       </fieldset>
