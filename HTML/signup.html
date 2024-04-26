@@ -17,7 +17,7 @@
       <a href="home.html"><img src="..//Images//logo.jpg" alt="Online Banking Website" title="Online Banking Website"></a>
   </header>
   
-  <form action="signup.php" method="post" onsubmit="window.location='login.html'">
+  <form action="signup.php" method="post">
 
       <fieldset>
           <legend>Sign Up</legend>
@@ -48,7 +48,8 @@
           
           <div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
 
-          <button type="button" id="signupbtn" value="0" onclick="goto();">Sign Up</button>
+         <button type="button" onclick="window.location.href='login.html';">Sign Up</button>
+
           
           <button type="reset" id="resetbtn">Reset</button>
       </fieldset>
