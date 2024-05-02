@@ -1,10 +1,10 @@
 <?php
 
 // Connect to AWS RDS database  
-$host = "online.cluster-c7u0ukksaqv1.us-east-2.rds.amazonaws.com";
+$host = "database-1.cnqagi268qzm.ap-south-2.rds.amazonaws.com";
 $username = "admin";
 $password = "admin123";
-$dbname = "online";
+$dbname = "AWSTest";
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
