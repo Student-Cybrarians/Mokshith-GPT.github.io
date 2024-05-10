@@ -7,7 +7,7 @@
         <title>Personal Internet Banking | Online Banking Website</title>
         <link href="../CSS/perIntBankCSS.css" rel="stylesheet">
         <script src="../Java Script/perIntBankJS.js"></script>
-        
+        <script src="www.google.com/recaptcha/api.js" async defer></script>
     </head>
 
     <body onload="load();">
@@ -24,6 +24,7 @@
                 <input type="number" min="0" max="20000" name="amnt" id="amnt"
                     placeholder="Enter the amount to send:"><br />
                 <p id="error"></p>
+                <div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
                 <button type="button" id="submitbtn" onclick="goto();">Submit</button>
             </form>
         </div>
