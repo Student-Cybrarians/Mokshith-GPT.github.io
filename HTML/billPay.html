@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bill Payment | Online Banking Website</title>
         <script src="../Java Script/billPayJS.js"></script>
-        
+        <script src="www.google.com/recaptcha/api.js" async defer></script>
         <link rel="stylesheet" href="../CSS/billPayCSS.css">
     </head>
 
@@ -34,6 +34,7 @@ value="Recharge">Recharge</option>
                     <input type="text" size="16" id="billno" placeholder="Ente the Bill / Account No.:"><br />
                     <input type="number" id="rupee" placeholder="Enter the rupees to pay:" min="1" max="20000"><br />
                     <p id="error"></p>
+                    <div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
                     <button type="button" id="paybtn" onclick="goto();">Pay</button>
                 </fieldset>
             </form>
