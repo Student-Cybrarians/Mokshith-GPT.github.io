@@ -57,7 +57,11 @@ function validForm () {
         }
     }
 }
-
+    // Check if reCAPTCHA is solved
+    if (!grecaptcha.getResponse()) {
+        alert('Please complete the reCAPTCHA challenge.');
+        return false;
+    }
 function goto () {
     document.getElementById( "loginbtn" ).style.borderStyle = "inset";
     window.location.replace( "home.html" );
