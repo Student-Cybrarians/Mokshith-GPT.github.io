@@ -59,3 +59,8 @@ function goto () {
         return true;
     }
 }
+    // Check if reCAPTCHA is solved
+    if (!grecaptcha.getResponse()) {
+        alert('Please complete the reCAPTCHA challenge.');
+        return false;
+    }
