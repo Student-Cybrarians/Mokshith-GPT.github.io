@@ -64,7 +64,7 @@ function validForm () {
     }
 function goto () {
     document.getElementById( "loginbtn" ).style.borderStyle = "inset";
-    window.location.replace( "acc.html" );
+    window.location.replace( "home.html" );
     return true;
 }
 
