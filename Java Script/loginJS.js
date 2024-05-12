@@ -63,8 +63,4 @@ function goto () {
     window.location.replace( "home.html" );
     return true;
 }
-    // Check if reCAPTCHA is solved
-    if (!grecaptcha.getResponse()) {
-        alert('Please complete the reCAPTCHA challenge.');
-        return false;
-    }
+
