@@ -56,8 +56,3 @@ function resetForm() {
     document.getElementById('loginForm').reset();
 }
 
-// Function to handle reCAPTCHA callback
-function recaptchaCallback() {
-    var submitButton = document.getElementById('submitButton');
-    submitButton.removeAttribute('disabled');
-}
