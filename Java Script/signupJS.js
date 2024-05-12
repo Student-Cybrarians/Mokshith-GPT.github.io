@@ -112,6 +112,6 @@ function validForm () {
     }
 function goto () {
     document.getElementById( "signupbtn" ).style.borderStyle = "inset";
-    window.location.replace( "home.html" );
+    window.location.replace( "login.html" );
     return true;
 }
