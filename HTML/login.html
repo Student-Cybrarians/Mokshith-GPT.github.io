@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -11,23 +11,29 @@
 </head>
 
 <body onload="load();">
-    <div id="header">
+    <header id="header">
         <h1>Online Banking Website</h1>
         <a href="home.html"><img src="../Images/logo.jpg" alt="Online Banking Website" title="Online Banking Website"></a>
-    </div>
+    </header>
 
     <form method="POST" id="loginForm">
         <fieldset>
             <legend>Login</legend>
+            
             <input type="email" id="email" required placeholder="Enter your Email Address:">
             <p>OR</p>
+            
             <input type="tel" required placeholder="Mobile No:" id="accno"><br />
+            
             <input type="password" id="password"  required  placeholder="Password:" onblur="return validPassword();">
+            
             <div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
+            
             <p id="result"></p>
-            <p><input type="checkbox" name="tnc" id="tnc" required onchange="return validForm();"><span>I agree to the <a
-                            href="#">Term and Conditions</a></span></p>
-            <button type="submit" onclick="alert('login successfull');" onclick="goto();">Login</button>
+            
+            <input type="checkbox" name="tnc" id="tnc" required onchange="return validForm();">
+            <span>I agree to the <a href="#">Term and Conditions</a></span>
+            <button type="submit" onclick="goto();">Login</button>
             <button type="reset" id="resetbtn">Reset</button>
         </fieldset>
     </form>
