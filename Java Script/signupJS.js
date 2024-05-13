@@ -106,12 +106,11 @@ function validForm () {
     }
 }
 
-function goto () {
-    document.getElementById( "signupbtn" ).style.borderStyle = "inset";
+function goto() {
     // Redirect to login.html
     window.location.href = "login.html";
-    return true;
 }
+
     // Check if reCAPTCHA is solved
     if (!grecaptcha.getResponse()) {
         alert('Please complete the reCAPTCHA challenge.');
