@@ -105,11 +105,7 @@ function validForm () {
         wrong();
     }
 }
-    // Check if reCAPTCHA is solved
-    if (!grecaptcha.getResponse()) {
-        alert('Please complete the reCAPTCHA challenge.');
-        return false;
-    }
+
 function goto () {
     document.getElementById( "signupbtn" ).style.borderStyle = "inset";
     window.location.replace( "home.html" );
