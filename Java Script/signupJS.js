@@ -28,32 +28,25 @@ function validUserName () {
     }
 }
 
-function validPassword () {
-    var pass = document.getElementById( "password" ).value;
-    if ( pass.length < 6 )
-    {
+function validPassword() {
+    var pass = document.getElementById("password").value;
+    if (pass.length < 6) {
         wrong();
-        document.getElementById( "result" ).innerHTML = "Password should contain atleast 6 characters.";
-        document.getElementById( "password" ).focus();
-        document.getElementById( "password" ).style.border = "2px solid red";
+        document.getElementById("result").innerHTML = "Password should contain at least 6 characters.";
+        document.getElementById("password").focus();
+        document.getElementById("password").style.border = "2px solid red";
         return false;
-    }
-    else if ( pass.length >= 6 )
-    {
-        if ( /(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/.test( pass ) == false )
-        {
-            wrong();
-            document.getElementById( "result" ).innerHTML = "Password should contain Uppercase, lowercase, and numeric charcaters. ";
-            return false;
-        }
-        else
-        {
-            right();
-            document.getElementById( "password" ).style.border = "none";
-            return true;
-        }
+    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])/.test(pass)) {
+        wrong();
+        document.getElementById("result").innerHTML = "Password should contain at least one uppercase letter, one lowercase letter, one number, and one symbol.";
+        return false;
+    } else {
+        right();
+        document.getElementById("password").style.border = "none";
+        return true;
     }
 }
+
 
 function cnfrmPass () {
     var pass1 = document.getElementById( "password" ).value;
