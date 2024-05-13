@@ -17,28 +17,24 @@
       <a href="home.html"><img src="..//Images//logo.jpg" alt="Online Banking Website" title="Online Banking Website"></a>
   </header>
   
-  <form method="POST" id="loginForm">
-      <fieldset>
-          <legend>Login</legend>
-          <input type="text" id="username" required placeholder="Enter valid Username:"
-              onblur="return validUserName();"><br> 
-        
-         
-          <input type="tel" id="phoneNumber" required placeholder="Enter phone number"> 
-          <input type="password" id="password" required placeholder="Password:" onblur="return validPassword();"><br>
-          <p id="result"></p>
-          <p>
+<form action="login.php" method="post" id="loginForm" onsubmit="return validForm();">
+    <fieldset>
+        <legend>Login</legend>
+        <input type="text" id="username" required placeholder="Enter valid Username:" onblur="return validUserName();"><br> 
+        <input type="tel" id="phoneNumber" required placeholder="Enter phone number"> 
+        <input type="password" id="password" required placeholder="Password:" onblur="return validPassword();"><br>
+        <p id="result"></p>
+        <p>
             <input type="checkbox" name="tnc" id="tnc" onchange="validateForm();" required>
-<span>I agree to the <a href="#">Terms and Conditions</a></span>
-<p id="tncError" style="display: none; color: red;">Please agree to the Terms and Conditions.</p>
+            <span>I agree to the <a href="#">Terms and Conditions</a></span>
+            <p id="tncError" style="display: none; color: red;">Please agree to the Terms and Conditions.</p>
+        </p>
+        <div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
+        <button type="submit">Login</button>
+        <button type="reset" id="resetbtn">Reset</button>
+    </fieldset>
+</form>
 
-          </p>
-          <div class="g-recaptcha" data-sitekey="6Lf8lLgpAAAAAPsxSlfPgsS-WWDbtTyGAkqO53Jm"></div>
-          <button type="submit" onclick="window.location.href='otp.html';">Login</button>
-
-          <button type="reset" id="resetbtn">Reset</button>
-      </fieldset>
-  </form>
 
 
 </body>
