@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect user information
     $name = $_POST['name'];
@@ -24,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: otp_verification.php");
     exit();
 }
-
-
+?>
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect user information
     $name = $_POST['name'];
