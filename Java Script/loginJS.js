@@ -73,3 +73,15 @@ function goto () {
         alert('Please complete the reCAPTCHA challenge.');
         return false;
     }
+function validateForm() {
+    var checkbox = document.getElementById('tnc');
+    var tncError = document.getElementById('tncError');
+
+    if (!checkbox.checked) {
+        tncError.style.display = 'block';
+        return false;
+    } else {
+        tncError.style.display = 'none';
+        return true;
+    }
+}
