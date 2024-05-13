@@ -108,7 +108,8 @@ function validForm () {
 
 function goto () {
     document.getElementById( "signupbtn" ).style.borderStyle = "inset";
-    window.location.replace( "home.html" );
+    // Redirect to login.html
+    window.location.href = "login.html";
     return true;
 }
     // Check if reCAPTCHA is solved
