@@ -1,0 +1,6 @@
+import type { NextFunction, Request, Response } from 'express'; import { parse } from 'cookie'; import { forbidden, unauthorized } from '../errors/http.js'; import type { AuthService } from './authService.js'; import type { Role, User } from './types.js';
+declare global { namespace Express { interface Request { user?: User; sessionId?: string; correlationId?: string; } } }
+export const sessionCookieName='ih_session';
+export function requireAuth(auth:AuthService){ return (req:Request,_res:Response,next:NextFunction)=>{ try{ const token=parse(req.headers.cookie||'')[sessionCookieName]; if(!token) throw unauthorized(); const {user,session}=auth.authenticateSession(token); req.user=user; req.sessionId=session.id; next(); } catch(e){ next(e); } }; }
+export function requireRole(...roles:Role[]){ return (req:Request,_res:Response,next:NextFunction)=>{ if(!req.user) return next(unauthorized()); if(!roles.includes(req.user.role)) return next(forbidden('Required role missing')); next(); }; }
+export function requirePermission(permission:string){ return (req:Request,_res:Response,next:NextFunction)=>{ if(!req.user) return next(unauthorized()); if(req.user.role==='ADMIN'||req.user.permissions.includes(permission)) return next(); next(forbidden('Required permission missing')); }; }

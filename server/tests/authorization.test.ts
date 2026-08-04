@@ -1,0 +1,3 @@
+import { describe, expect, it } from 'vitest'; import { requirePermission, requireRole } from '../src/auth/middleware.js';
+function run(mw:any,user:any){ let err:any; mw({user} as any,{} as any,(e:any)=>{err=e}); return err; }
+describe('authorization guards',()=>{ it('enforces role guard',()=>{expect(run(requireRole('ADMIN'),{role:'USER'}).status).toBe(403); expect(run(requireRole('USER'),{role:'USER'})).toBeUndefined();}); it('enforces permission guard',()=>{expect(run(requirePermission('reports.read'),{role:'USER',permissions:[]}).status).toBe(403); expect(run(requirePermission('reports.read'),{role:'USER',permissions:['reports.read']})).toBeUndefined(); expect(run(requirePermission('anything'),{role:'ADMIN',permissions:[]})).toBeUndefined();}); });

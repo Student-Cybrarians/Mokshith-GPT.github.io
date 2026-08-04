@@ -1,0 +1,4 @@
+export type Role='USER'|'ADMIN'; export type UserStatus='ACTIVE'|'SUSPENDED'|'DISABLED'|'DELETED';
+export interface User { id:string; googleSub:string; email:string; emailVerified:boolean; name:string; avatarUrl:string|null; provider:'GOOGLE'; role:Role; status:UserStatus; createdAt:string; updatedAt:string; lastLoginAt:string|null; lastActivityAt:string|null; deletedAt:string|null; permissions:string[]; }
+export interface Session { id:string; userId:string; tokenHash:string; deviceId:string; createdAt:string; lastSeenAt:string; expiresAt:string; revokedAt:string|null; ipAddress:string|null; userAgent:string|null; }
+export interface GoogleClaims { iss:string; aud:string|string[]; exp:number; iat?:number; sub:string; email:string; email_verified:boolean; name?:string; picture?:string; nonce?:string; }
