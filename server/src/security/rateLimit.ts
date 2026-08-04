@@ -1,0 +1,2 @@
+import type { NextFunction, Request, Response } from 'express'; import { HttpError } from '../errors/http.js';
+export function rateLimit(max:number, windowMs:number){ const hits=new Map<string,{n:number;reset:number}>(); return (req:Request,_res:Response,next:NextFunction)=>{ const key=req.ip||'unknown'; const now=Date.now(); const h=hits.get(key); if(!h||h.reset<now) hits.set(key,{n:1,reset:now+windowMs}); else if(++h.n>max) return next(new HttpError(429,'RATE_LIMITED','Too many requests')); next(); }; }

@@ -1,0 +1,2 @@
+import type { Capability } from './provider.js';
+export const models: Record<Capability,{name:string; env:'NVIDIA_API_KEY_NEMOTRON_VL_12B'|'NVIDIA_API_KEY_LLAMA_NEMOTRON_VL_8B'|'NVIDIA_API_KEY_NEMOTRON_9B'; supports:Capability[]}> = { reasoning:{name:'nvidia/nemotron-9b',env:'NVIDIA_API_KEY_NEMOTRON_9B',supports:['reasoning','text']}, text:{name:'nvidia/llama-nemotron-vl-8b',env:'NVIDIA_API_KEY_LLAMA_NEMOTRON_VL_8B',supports:['text','reasoning']}, vision:{name:'nvidia/nemotron-vl-12b',env:'NVIDIA_API_KEY_NEMOTRON_VL_12B',supports:['vision','text']} };
