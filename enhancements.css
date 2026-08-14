@@ -1,0 +1,22 @@
+/* V2 visual polish: responsive, OLED-safe, high-density display tuning */
+:root{--aurora-cyan:#66e7f4;--aurora-violet:#a88bff;--aurora-mint:#73e3b4;--aurora-amber:#ffc27a}
+body{background-color:#05070b}
+/* Keep large displays visually composed instead of stretched */
+@media (min-width:1600px){.hero-visual{transform:scale(1.04)}.project-grid{gap:22px}.project-card{padding:34px}.about-copy>p:not(.eyebrow){font-size:18px}}
+@media (min-width:2200px){body{font-size:17px}.hero{min-height:820px}.hero-visual{transform:scale(1.08)}.terminal-card{max-width:560px}.ticker-track{gap:70px}}
+/* Compact landscape phones and short tablets */
+@media (max-height:700px) and (orientation:landscape){.hero{grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);align-items:center}.hero h1{font-size:clamp(40px,7vw,64px)}.hero-visual{min-height:300px}.terminal-card{max-height:72svh}.terminal-body{max-height:44svh}}
+/* Very narrow devices */
+@media (max-width:360px){.section-pad{padding-left:14px;padding-right:14px}.status{max-width:142px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hero h1{font-size:42px}.hero-visual{min-height:260px}.terminal-card{border-radius:18px}.terminal-body{padding:16px;font-size:11px}.project-card h3{font-size:31px}.project-meta{font-size:8px}.tags{gap:5px}.tags span{font-size:9px}}
+/* Touch-first interaction: never depend on hover */
+@media (hover:none){.project-card:hover{transform:none;border-color:var(--line);background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.014))}.btn:hover{transform:none}.project-link:active,.btn:active{opacity:.8}}
+/* Keyboard focus remains obvious without adding visual noise */
+:where(a,button):focus-visible{outline:2px solid var(--aurora-cyan);outline-offset:4px;border-radius:6px}
+/* OLED-friendly glow: luminance is concentrated in small areas, not full-screen */
+.orb-a{background:rgba(168,139,255,.10)}.orb-b{background:rgba(102,231,244,.05)}.hero h1 em{text-shadow:0 0 28px rgba(102,231,244,.12)}
+/* Avoid transparent-white stacking that can look grey on high-contrast panels */
+.project-card,.fact,.btn-ghost{background-color:rgba(12,17,25,.82)}
+/* High pixel-density text rendering */
+.hero h1,.section-heading h2,.about h2,.contact h2,.project-card h3,.brand{font-synthesis:none;-webkit-font-smoothing:antialiased}
+/* Print-friendly fallback */
+@media print{body{background:#fff;color:#111}.topbar,.hero-visual,.ticker,.noise,.orb,.hero-actions,.contact-actions{display:none}.section-pad{padding:24px;max-width:none}.project-card,.fact{border:1px solid #999;background:#fff;color:#111;break-inside:avoid}.project-card p:not(.project-kicker),.about-copy>p:not(.eyebrow),.contact p:not(.eyebrow){color:#333}}
