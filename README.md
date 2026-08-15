@@ -6,7 +6,7 @@ Personal portfolio and engineering lab of **Mokshith Y Nanda**.
 
 ## 🌐 Portfolio
 
-**Live portfolio:** `https://mokshith.dev`
+**Live portfolio:** `https://mokshith-ai-security.dev`
 
 **GitHub Pages:** `https://student-cybrarians.github.io/mokshith-ai-security/`
 
